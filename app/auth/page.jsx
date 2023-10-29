@@ -1,14 +1,30 @@
 "use client";
+import axios from "axios";
 import React, { useState } from "react";
+import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-const AuthPage = () => {
-  const [inputs, setInputs] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
+const LoginRegisterPage = () => {
+  const router = useRouter();
 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
+
+  async function login() {
+    await signIn("credentials", { email, password, redirect: false });
+    router.push("/");
+  }
+  async function register() {
+    const res = await axios.post("/api/register", {
+      name,
+      email,
+      password,
+    });
+    console.log(res.data);
+    router.push("/");
+  }
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-cover">
@@ -26,24 +42,29 @@ const AuthPage = () => {
                 <input
                   type="text"
                   placeholder="Username"
-                  value={inputs.username}
-                  onChange={(e) => setInputs(e.target.value)}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                 />
               )}
               <input
                 type="email"
                 placeholder="Email"
-                value={inputs.email}
-                onChange={(e) => setInputs(e.target.value)}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
               <input
                 type="password"
                 placeholder="Password"
-                value={inputs.password}
-                onChange={(e) => setInputs(e.target.value)}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
 
-              <button className="w-full text-white bg-red-700 my-3 py-2 rounded-sm">
+              <button
+                onClick={() => {
+                  variant === "login" ? login() : register();
+                }}
+                className="w-full text-white bg-red-700 my-3 py-2 rounded-sm"
+              >
                 {variant === "login" ? "Login" : "Sign Up"}
               </button>
 
@@ -73,4 +94,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default LoginRegisterPage;
