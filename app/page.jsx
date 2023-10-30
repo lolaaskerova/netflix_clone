@@ -17,7 +17,7 @@ import { getSession, signOut } from "next-auth/react";
 export default function Home() {
   return (
     <div>
-      <button onClick={() => signOut()}>log out</button>
+      <button>log out</button>
     </div>
   );
 }

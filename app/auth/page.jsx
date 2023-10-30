@@ -1,6 +1,8 @@
 "use client";
 import axios from "axios";
 import React, { useState } from "react";
+import { BsGithub } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -67,7 +69,20 @@ const LoginRegisterPage = () => {
               >
                 {variant === "login" ? "Login" : "Sign Up"}
               </button>
-
+              <div className="flex justify-center gap-3">
+                <div
+                  onClick={() => signIn("github", { callbackUrl: "/" })}
+                  className="bg-white text-xl p-2 rounded-full cursor-pointer"
+                >
+                  <BsGithub />
+                </div>
+                <div
+                  onClick={() => signIn("google", { callbackUrl: "/" })}
+                  className="bg-white text-xl p-2 rounded-full cursor-pointer"
+                >
+                  <FcGoogle />
+                </div>
+              </div>
               <div>
                 {" "}
                 <span className="text-zinc-500 text-sm mr-0.5">

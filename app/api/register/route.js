@@ -8,7 +8,6 @@ export async function POST(req) {
   try {
     const body = await req.json();
     const { name, email, password } = body;
-    console.log(req.body);
     if (!name || !email || !password) {
       return new NextResponse("Missing username, email or password", {
         status: 400,
