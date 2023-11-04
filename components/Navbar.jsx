@@ -19,11 +19,12 @@ const Navbar = () => {
       window.removeEventListener("scroll", listenScrollEvent);
     };
   }, []);
+
   return (
     <>
       <nav
-        className={`fixed w-full transition-all ${
-          scrollBg ? "bg-black bg-opacity-40" : undefined
+        className={`fixed w-full z-40 transition ${
+          scrollBg ? "bg-zinc-900 bg-opacity-90" : undefined
         }`}
       >
         <div className="container mx-auto px-4 py-5 flex justify-between items-center">
