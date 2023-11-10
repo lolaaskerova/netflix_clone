@@ -4,9 +4,9 @@ import { AiOutlinePlus } from "react-icons/ai";
 
 const MovieCard = ({ data }) => {
   return (
-    <div className="group h-[12vw] cursor-pointer relative">
+    <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-0 md:mb-[35%] sm:mb-[25%] mb-[40%]">
       <img
-        className="h-[12vw] w-full object-cover transition group-hover:opacity-0 sm:group-hover:opacity-0"
+        className="lg:h-[12vw] md:h-[20vw] h-[40vw] w-full object-cover transition lg:group-hover:opacity-0 opacity-0 lg:opacity-100 "
         src={data.thumbnailUrl}
         alt={data.title}
       />
@@ -14,15 +14,17 @@ const MovieCard = ({ data }) => {
         className="
         absolute
         top-0 
-        invisible 
-        opacity-0 
-        sm:visible 
+        lg:invisible
+        lg:opacity-0  
+        visible
+        opacity-100
         z-10 
         transition 
         duration-200
         w-full
-        group-hover:opacity-100  
-        group-hover:-translate-y-20
+        lg:group-hover:opacity-100
+        lg:group-hover:visible
+        lg:group-hover:-translate-y-20
         "
       >
         <img
@@ -30,7 +32,9 @@ const MovieCard = ({ data }) => {
           object-cover 
           transition 
           duration 
-          h-[12vw] 
+          lg:h-[12vw] 
+          md:h-[20vw] 
+          h-[40vw]
           w-full
           rounded-t-md"
           src={data.thumbnailUrl}
@@ -51,7 +55,8 @@ const MovieCard = ({ data }) => {
             justify-center 
             items-center 
             bg-white 
-            p-2 
+            lg:p-2 
+            p-1
             cursor-pointer
             rounded-full 
             transition 
@@ -65,7 +70,8 @@ const MovieCard = ({ data }) => {
             justify-center 
             items-center 
             bg-white 
-            p-2 
+            lg:p-2 
+            p-1
             cursor-pointer
             rounded-full 
             transition 
