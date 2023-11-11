@@ -14,7 +14,7 @@ const HanburgerMenu = ({ showMenu, setShowMenu }) => {
         opacity: { ease: "linear" },
       }}
       ref={ref}
-      className={`lg:hidden transition sticky h-screen lg:w-[40%] w-[50%] bg-black bg-opacity-90 p-9 z-50 ${
+      className={`lg:hidden transition fixed h-full lg:w-[40%] w-[50%] bg-black bg-opacity-90 p-9 z-50 ${
         showMenu ? "block" : "hidden"
       }`}
     >
@@ -25,10 +25,10 @@ const HanburgerMenu = ({ showMenu, setShowMenu }) => {
         ×
       </span>
       <ul className="list-none text-white flex flex-col gap-5 cursor-pointer mt-10">
-        <li>Movies</li>
-        <li>Series</li>
-        <li>New & Popular</li>
-        <li>My List</li>
+        <li className="hover:text-red-600 transition">Movies</li>
+        <li className="hover:text-red-600 transition">Series</li>
+        <li className="hover:text-red-600 transition">New & Popular</li>
+        <li className="hover:text-red-600 transition">My List</li>
       </ul>
     </motion.aside>
   );
