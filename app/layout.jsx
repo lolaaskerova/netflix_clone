@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import { siteConfig } from "@/config/site";
+import { ReduxProvider } from "@/redux/provider";
 import "@/styles/globals.css";
 import { Poppins } from "next/font/google";
 
@@ -15,11 +16,13 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en">  
       <head />
       <body className={poppins.className}>
-        <Navbar />
-        <main>{children}</main>
+        <ReduxProvider>
+          <Navbar />
+          <main>{children}</main>
+        </ReduxProvider>
       </body>
     </html>
   );

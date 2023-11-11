@@ -1,8 +1,8 @@
 "use client";
 import axios from "axios";
-import React, { useState } from "react";
-import { BsGithub } from "react-icons/bs";
-import { FcGoogle } from "react-icons/fc";
+import React, { useCallback, useState } from "react";
+// import { BsGithub } from "react-icons/bs";
+// import { FcGoogle } from "react-icons/fc";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
@@ -14,19 +14,32 @@ const LoginRegisterPage = () => {
   const [password, setPassword] = useState("");
   const [variant, setVariant] = useState("login");
 
-  async function login() {
-    await signIn("credentials", { email, password, redirect: false });
-    router.push("/");
-  }
-  async function register() {
-    const res = await axios.post("/api/register", {
-      name,
-      email,
-      password,
-    });
-    console.log(res.data);
-    router.push("/");
-  }
+  const login = useCallback(async () => {
+    try {
+      await signIn("credentials", {
+        email,
+        password,
+        redirect: false,
+        callbackUrl: "/",
+      });
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }, [email, password]);
+
+  const register = useCallback(async () => {
+    try {
+      await axios.post("/api/register", {
+        name,
+        email,
+        password,
+      });
+      router.push("/");
+    } catch (error) {
+      console.log(error);
+    }
+  }, [name, email, password]);
 
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-cover">
@@ -69,7 +82,7 @@ const LoginRegisterPage = () => {
               >
                 {variant === "login" ? "Login" : "Sign Up"}
               </button>
-              <div className="flex justify-center gap-3">
+              {/* <div className="flex justify-center gap-3">
                 <div
                   onClick={() => signIn("github", { callbackUrl: "/" })}
                   className="bg-white text-xl p-2 rounded-full cursor-pointer"
@@ -82,7 +95,7 @@ const LoginRegisterPage = () => {
                 >
                   <FcGoogle />
                 </div>
-              </div>
+              </div> */}
               <div>
                 {" "}
                 <span className="text-zinc-500 text-sm mr-0.5">

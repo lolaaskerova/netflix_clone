@@ -1,8 +1,11 @@
+import { removeFav } from "@/redux/features/FavoriteSlice";
 import React from "react";
+import { useDispatch } from "react-redux";
 import { BsFillPlayFill } from "react-icons/bs";
-import FavoriteButton from "./FavoriteButton";
+import { AiFillDelete } from "react-icons/ai";
 
-const MovieCard = ({ data}) => {
+const MyListCard = ({ data }) => {
+  const dispatch = useDispatch();
   return (
     <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-0 md:mb-[35%] sm:mb-[25%] mb-[40%]">
       <img
@@ -64,9 +67,26 @@ const MovieCard = ({ data}) => {
             >
               <BsFillPlayFill size={20} />
             </span>
-            <FavoriteButton
-              movie={data}
-            />
+            <span
+              onClick={() => {
+                dispatch(removeFav(data));
+              }}
+              className="
+            flex 
+            justify-center 
+            items-center 
+            border-2
+            border-white 
+            lg:p-2 
+            p-1
+            text-white
+            cursor-pointer
+            rounded-full 
+            transition 
+            "
+            >
+              <AiFillDelete size={20} />
+            </span>
           </div>
           <div className="mt-3">
             <p className="text-zinc-400 text-sm">{data.genre}</p>
@@ -78,4 +98,4 @@ const MovieCard = ({ data}) => {
   );
 };
 
-export default MovieCard;
+export default MyListCard;
