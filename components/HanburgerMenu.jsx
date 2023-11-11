@@ -1,8 +1,17 @@
-import React, { useRef } from "react";
+'use client'
+import React, { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 
 const HanburgerMenu = ({ showMenu, setShowMenu }) => {
   const ref = useRef(null);
+  const handleClickOutside = (e) => {
+    if (ref.current && !ref.current.contains(e.target)) {
+      return setShowMenu(false);
+    }
+  };
+  useEffect(() => {
+    document.addEventListener("click", handleClickOutside, true);
+  });
   return (
     <motion.aside
       key={showMenu}
