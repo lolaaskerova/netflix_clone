@@ -1,4 +1,3 @@
-import Navbar from "@/components/Navbar";
 import { siteConfig } from "@/config/site";
 import { ReduxProvider } from "@/redux/provider";
 import "@/styles/globals.css";
@@ -16,11 +15,10 @@ export const metadata = {
 };
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">  
+    <html lang="en">
       <head />
       <body className={poppins.className}>
         <ReduxProvider>
-          <Navbar />
           <main>{children}</main>
         </ReduxProvider>
       </body>

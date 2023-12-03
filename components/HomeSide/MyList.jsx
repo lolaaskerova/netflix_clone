@@ -5,7 +5,6 @@ import MyListCard from "../MyListCard";
 
 const MyList = ({ setAddFav }) => {
   const favorites = useSelector((state) => state.favorite);
-  console.log(favorites.favorite);
   return (
     <>
       {favorites.favorite.length === 0 ? (
