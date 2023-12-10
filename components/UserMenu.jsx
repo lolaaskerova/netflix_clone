@@ -1,4 +1,3 @@
-import { signOut } from "next-auth/react";
 import React from "react";
 
 const UserMenu = ({ showUser }) => {
@@ -9,14 +8,9 @@ const UserMenu = ({ showUser }) => {
       }`}
     >
       <h6 className="text-white text-base mb-2 border-b-2 border-zinc-500 pb-3">
-        lala
+        Your Username
       </h6>
-      <span
-        onClick={() => signOut({ callbackUrl: "/auth" })}
-        className="text-zinc-400 text-sm cursor-pointer"
-      >
-        Sign Out
-      </span>
+      <span className="text-zinc-400 text-sm cursor-pointer">Sign Out</span>
     </div>
   );
 };
