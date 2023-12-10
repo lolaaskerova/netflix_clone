@@ -1,8 +1,10 @@
 import React from "react";
 import { BsFillPlayFill } from "react-icons/bs";
 import FavoriteButton from "./FavoriteButton";
+import { useRouter } from "next/navigation";
 
-const MovieCard = ({ data}) => {
+const MovieCard = ({ data }) => {
+  const router = useRouter();
   return (
     <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-0 md:mb-[35%] sm:mb-[25%] mb-[40%]">
       <img
@@ -50,6 +52,7 @@ const MovieCard = ({ data}) => {
           <div className="flex items-center gap-3">
             <h4 className="text-white text-xl">{data.title}</h4>
             <span
+              onClick={() => router.push(`${data?.id}`)}
               className="
             flex 
             justify-center 
@@ -64,9 +67,7 @@ const MovieCard = ({ data}) => {
             >
               <BsFillPlayFill size={20} />
             </span>
-            <FavoriteButton
-              movie={data}
-            />
+            <FavoriteButton movie={data} />
           </div>
           <div className="mt-3">
             <p className="text-zinc-400 text-sm">{data.genre}</p>
