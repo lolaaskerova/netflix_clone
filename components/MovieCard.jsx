@@ -67,8 +67,13 @@ const MovieCard = ({ data }) => {
             </div>
           </div>
           <div className="mt-3">
-            <p className="text-zinc-400 text-sm">{data.genre}</p>
-            <span className="text-zinc-500 text-mini">{data.duration}</span>
+            <p className="text-zinc-400 text-sm">
+              Release Date: {data.release_date}
+            </p>
+            <span className="text-zinc-500 text-mini">
+              {" "}
+              Language: {data.original_language}
+            </span>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import { AiOutlineInfoCircle } from "react-icons/ai";
 import { BsFillPlayFill } from "react-icons/bs";
 import fetchData from "@/hooks/fetchData";
 
