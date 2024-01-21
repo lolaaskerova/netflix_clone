@@ -1,5 +1,4 @@
 import { siteConfig } from "@/config/site";
-import { ReduxProvider } from "@/redux/provider";
 import "@/styles/globals.css";
 import { Poppins } from "next/font/google";
 
@@ -18,9 +17,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head />
       <body className={poppins.className}>
-        <ReduxProvider>
-          <main>{children}</main>
-        </ReduxProvider>
+        <main>{children}</main>
       </body>
     </html>
   );

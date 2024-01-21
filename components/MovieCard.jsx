@@ -6,9 +6,9 @@ import { useRouter } from "next/navigation";
 const MovieCard = ({ data }) => {
   const router = useRouter();
   return (
-    <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-0 md:mb-[35%] sm:mb-[25%] mb-[40%]">
+    <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-[90%] md:mb-[80%] mb-[70%]">
       <img
-        className="lg:h-[12vw] md:h-[20vw] h-[40vw] w-full object-cover transition lg:group-hover:opacity-0 opacity-0 lg:opacity-100 "
+        className="w-full h-[400px] object-cover aspect-auto transition lg:group-hover:opacity-0 opacity-0 lg:opacity-100"
         src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
         alt={data.original_title}
       />
@@ -16,6 +16,8 @@ const MovieCard = ({ data }) => {
         className="
         absolute
         top-0 
+        bg-zinc-800
+        rounded-md
         lg:invisible
         lg:opacity-0  
         visible
@@ -23,37 +25,31 @@ const MovieCard = ({ data }) => {
         z-10 
         transition 
         duration-200
-        w-full
         lg:group-hover:opacity-100
         lg:group-hover:visible
-        lg:group-hover:-translate-y-20
+        lg:group-hover:-translate-y-5
         "
       >
         <img
           className="
-          object-cover 
+          aspect-square
+          object-cover
           transition 
           duration 
-          lg:h-[12vw] 
-          md:h-[20vw] 
-          h-[40vw]
           w-full
           rounded-t-md"
           src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
           alt={data.original_title}
         />
-        <div
-          className="
-        bg-zinc-800
-        rounded-b-md
-        p-3
-        "
-        >
-          <div className="flex items-center gap-3">
-            <h4 className="text-white text-xl">{data.title}</h4>
-            <span
-              onClick={() => router.push(`${data?.id}`)}
-              className="
+        <div className="p-3">
+          <div className="flex justify-between items-center">
+            <h4 className="text-white lg:text-custom text-base">
+              {data.title}
+            </h4>
+            <div className="flex items-center gap-2">
+              <span
+                onClick={() => router.push(`${data?.id}`)}
+                className="
             flex 
             justify-center 
             items-center 
@@ -64,10 +60,11 @@ const MovieCard = ({ data }) => {
             rounded-full 
             transition 
             hover:bg-zinc-300"
-            >
-              <BsFillPlayFill size={20} />
-            </span>
-            <FavoriteButton movie={data} />
+              >
+                <BsFillPlayFill size={20} />
+              </span>
+              <FavoriteButton movie={data} />
+            </div>
           </div>
           <div className="mt-3">
             <p className="text-zinc-400 text-sm">{data.genre}</p>
