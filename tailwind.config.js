@@ -11,6 +11,9 @@ module.exports = {
         custom: "18px",
         mini: "12px",
       },
+      minHeight: {
+        custom: "480px",
+      },
     },
   },
   plugins: [],

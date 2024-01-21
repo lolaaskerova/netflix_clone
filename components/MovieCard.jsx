@@ -15,6 +15,7 @@ const MovieCard = ({ data }) => {
       <div
         className="
         absolute
+        min-h-custom
         top-0 
         bg-zinc-800
         rounded-md
