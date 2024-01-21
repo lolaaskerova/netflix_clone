@@ -1,6 +1,5 @@
 import Billboard from "@/components/HomeSide/Billboard";
 import Movies from "@/components/HomeSide/Movies";
-import MyList from "@/components/HomeSide/MyList";
 import Navbar from "@/components/Navbar";
 
 function Home() {
@@ -26,8 +25,6 @@ function Home() {
           "https://api.themoviedb.org/3/movie/top_rated?api_key=82976aa557a864bbd01c50abfe785ff8"
         }
       />
-
-      <MyList />
     </div>
   );
 }

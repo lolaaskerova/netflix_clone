@@ -18,7 +18,7 @@ const Billboard = () => {
           className="cursor-pointer relative h-[90vh] bg-no-repeat bg-cover "
         >
           <div className="absolute top-0 bottom-0 left-0 right-0 bg-black bg-opacity-80 z-10">
-            <div className="absolute lg:top-[30%] top-[40%] left-5 py-5 ">
+            <div className=" absolute lg:top-[30%] top-[40%] left-5 py-5 ">
               <h1 className="lg:text-6xl text-2xl text-white">
                 {randomMovie.title}
               </h1>

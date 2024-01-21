@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 const MovieCard = ({ data }) => {
   const router = useRouter();
   return (
-    <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-[90%] md:mb-[80%] mb-[70%]">
+    <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-[90%] md:mb-[90%] mb-[90%]">
       <img
         className="w-full h-[400px] object-cover aspect-auto transition lg:group-hover:opacity-0 opacity-0 lg:opacity-100"
         src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
@@ -16,6 +16,8 @@ const MovieCard = ({ data }) => {
         className="
         absolute
         min-h-custom
+        lg:min-h-big
+        sm:min-h-mini
         top-0 
         bg-zinc-800
         rounded-md
@@ -28,7 +30,7 @@ const MovieCard = ({ data }) => {
         duration-200
         lg:group-hover:opacity-100
         lg:group-hover:visible
-        lg:group-hover:-translate-y-5
+        lg:group-hover:-translate-y-20
         "
       >
         <img
