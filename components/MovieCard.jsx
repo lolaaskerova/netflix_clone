@@ -9,8 +9,8 @@ const MovieCard = ({ data }) => {
     <div className="group lg:h-[12vw] md:h-[20vw] h-[40vw] cursor-pointer relative col-span lg:mb-0 md:mb-[35%] sm:mb-[25%] mb-[40%]">
       <img
         className="lg:h-[12vw] md:h-[20vw] h-[40vw] w-full object-cover transition lg:group-hover:opacity-0 opacity-0 lg:opacity-100 "
-        src={data.thumbnailUrl}
-        alt={data.title}
+        src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+        alt={data.original_title}
       />
       <div
         className="
@@ -39,8 +39,8 @@ const MovieCard = ({ data }) => {
           h-[40vw]
           w-full
           rounded-t-md"
-          src={data.thumbnailUrl}
-          alt={data.title}
+          src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
+          alt={data.original_title}
         />
         <div
           className="
