@@ -1,9 +1,7 @@
 import React from "react";
 import Title from "../Title";
-import { useSelector } from "react-redux";
-import MyListCard from "../MyListCard";
 
-const MyList = ({ setAddFav }) => {
+const MyList = () => {
   return (
     <>
       <div className="container mx-auto px-4 py-5  ">

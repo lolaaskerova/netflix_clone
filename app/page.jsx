@@ -15,17 +15,18 @@ function Home() {
         }
       />
       <Movies
-        title={"Trending Now"}
-        url={
-          "https://api.themoviedb.org/3/movie/top_rated?api_key=82976aa557a864bbd01c50abfe785ff8"
-        }
-      />
-      <Movies
         title={"Upcoming"}
         url={
           "https://api.themoviedb.org/3/movie/upcoming?api_key=82976aa557a864bbd01c50abfe785ff8"
         }
       />
+      <Movies
+        title={"Top Rated Movies"}
+        url={
+          "https://api.themoviedb.org/3/movie/top_rated?api_key=82976aa557a864bbd01c50abfe785ff8"
+        }
+      />
+
       <MyList />
     </div>
   );

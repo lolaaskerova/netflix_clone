@@ -1,4 +1,5 @@
 import React from "react";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const FavoriteButton = () => {
   return (
@@ -17,7 +18,7 @@ const FavoriteButton = () => {
   rounded-full 
   transition "
     >
-      <Icon size={17} className="transition duration-200" />
+      <AiOutlinePlus size={17} className="transition duration-200" />
     </span>
   );
 };
