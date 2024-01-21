@@ -15,7 +15,7 @@ const MovieCard = ({ data }) => {
       <div
         className="
         absolute
-        min-h-custom
+        md:min-h-custom
         lg:min-h-big
         sm:min-h-mini
         top-0 
