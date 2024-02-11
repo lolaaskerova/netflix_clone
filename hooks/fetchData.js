@@ -5,7 +5,7 @@ const fetchData = (url) => {
   const [data, setData] = useState([]);
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get(url).then((res) => res.data.results);
+      const response = await axios.get(url).then((res) => res);
       setData(response);
     };
     getData();
