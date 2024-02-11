@@ -1,5 +1,4 @@
 import React from "react";
-import FavoriteButton from "./FavoriteButton";
 
 const MovieCard = ({ data, setId }) => {
   const scrollToTop = () => {

@@ -1,22 +1,33 @@
 import React from "react";
 
-const Modal = () => {
+const Modal = ({ movieId, setModal }) => {
   return (
     <div
       className="
-    w-1/2 
+    w-[40vw] 
     h-[30vw] 
     fixed 
-    top-[50%] 
+    top-[60%] 
     left-[50%] 
     translate-x-[-50%] 
-    translate-y-[-50%] 
+    translate-y-[-60%] 
     z-50 
-    bg-white"
+"
     >
-      <div>
-        <video src=""> nfpwakfn'awinegoi</video>
-      </div>
+      <span
+        onClick={() => setModal(false)}
+        className="absolute top-[-7%] right-0 text-2xl cursor-pointer text-white hover:text-red-600"
+      >
+        {" "}
+        ×
+      </span>
+      <iframe
+        className="w-full h-full"
+        allowFullScreen
+        src={`https://www.youtube.com/embed/${movieId}`}
+      >
+        {" "}
+      </iframe>
     </div>
   );
 };
