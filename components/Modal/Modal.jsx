@@ -4,8 +4,14 @@ const Modal = ({ movieId, setModal }) => {
   return (
     <div
       className="
-    w-[40vw] 
-    h-[30vw] 
+    lg:w-[40vw] 
+    lg:h-[30vw] 
+    md:w-[60vw] 
+    md:h-[40vw]
+    sm:w-[70vw] 
+    sm:h-[50vw]  
+    w-[80vw] 
+    h-[60vw] 
     fixed 
     top-[60%] 
     left-[50%] 
